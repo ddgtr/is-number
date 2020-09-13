@@ -11,7 +11,12 @@ isNumber(16) // true
 isNumber(-16) // true
 isNumber(-16.5) // true
 isNumber(16.5) // true
+isNumber("16") // true
+
 isNumber("foo") // false
-isNumber("16") // false
 isNumber(["foo"]) // false
+isNumber(function(foo) {}) // false
+isNumber(NaN) // false
+isNumber(Infinity) // false
+isNumber(+[]) // false
 ```

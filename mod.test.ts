@@ -21,13 +21,13 @@ Deno.test("with negative float number", () => {
     assertEquals(isNumber(a), true)
 })
 
-Deno.test("with string", () => {
-    const a = "foo";
-    assertEquals(isNumber(a), false)
-})
-
 Deno.test("with number in string", () => {
     const a = "134";
+    assertEquals(isNumber(a), true)
+})
+
+Deno.test("with string", () => {
+    const a = "foo";
     assertEquals(isNumber(a), false)
 })
 
@@ -38,9 +38,11 @@ Deno.test("with an object and array", () => {
     assertEquals(isNumber(b), false)
 })
 
-Deno.test("with NaN", () => {
+Deno.test("with NaN and Infinity", () => {
     const a = NaN;
+    const b = Infinity;
     assertEquals(isNumber(a), false)
+    assertEquals(isNumber(b), false)
 })
 
 Deno.test("with null and undefined", () => {
