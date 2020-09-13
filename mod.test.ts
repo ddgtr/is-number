@@ -1,30 +1,19 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import isNumber from './mod.ts'
 
-Deno.test("with positive integer number", () => {
+Deno.test("with number", () => {
     const a = 12;
+    const b = -12;
+    const c = 12.54;
+    const d = -12.54;
+    const e = "12";
     assertEquals(isNumber(a), true)
+    assertEquals(isNumber(b), true)
+    assertEquals(isNumber(c), true)
+    assertEquals(isNumber(d), true)
+    assertEquals(isNumber(e), true)
 })
 
-Deno.test("with negative integer number", () => {
-    const a = -12;
-    assertEquals(isNumber(a), true)
-})
-
-Deno.test("with positive float number", () => {
-    const a = 12.54;
-    assertEquals(isNumber(a), true)
-})
-
-Deno.test("with negative float number", () => {
-    const a = -12.54;
-    assertEquals(isNumber(a), true)
-})
-
-Deno.test("with number in string", () => {
-    const a = "134";
-    assertEquals(isNumber(a), true)
-})
 
 Deno.test("with string", () => {
     const a = "foo";
