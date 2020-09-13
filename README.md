@@ -1,4 +1,5 @@
 # is-number
+![](https://img.shields.io/github/workflow/status/ddgtr/is-number/Deno)
 
 The legendary is-number library for Deno.
 
